@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ErrorDetailViewModel>
+@{
+}
+<div class="text-left">
+    <Table class="table-striped">
+        <tr class="ta">
+            <th>
+                Error code
+            </th>
+            <th>
+                User
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Error
+            </th>
+            <th>
+                Stack trace
+            </th>
+        </tr>
+        @foreach (var errorDetail in Model)
+        {
+            <tr class="d-lg-table-row">
+                <td>@errorDetail.ErrorCode</td>
+                <td>@errorDetail.User</td>
+                <td>@errorDetail.Time</td>
+                <td>@errorDetail.Error</td>
+                <td>@errorDetail.StackTrace</td>
+            </tr>
+        }
+    </Table>
+    <br />
+    <p>Last refreshed @DateTime.Now.ToString()</p><ErrorDetailViewModel>
+</div>
